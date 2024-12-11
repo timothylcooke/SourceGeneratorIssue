@@ -1,0 +1,6 @@
+﻿<Application x:Class="SourceGeneratorIssue.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="Application_Startup">
+    <!-- Application's entry point is SourceGeneratorIssue.App.Application_Startup -->
+</Application>

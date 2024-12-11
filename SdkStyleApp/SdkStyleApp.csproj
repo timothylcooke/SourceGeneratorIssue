@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net481</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- This ItemGroup is identical between the two projects. -->
+
+    <PackageReference Include="ReactiveUI" Version="20.1.63" />
+    <PackageReference Include="ReactiveUI.SourceGenerators" Version="2.0.17" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" PrivateAssets="all" />
+
+    <ApplicationDefinition Include="..\src\App.xaml" Link="src\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+
+    <Compile Include="..\src\App.xaml.cs" Link="src\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+
+    <Compile Include="..\src\Compatibility.cs" Link="src\Compatibility.cs" />
+    <Compile Include="..\src\ExampleViewModel.cs" Link="src\ExampleViewModel.cs" />
+
+    <!-- By nature of having any WPF "Page" (XAML) resource (e.g. Window) in LegacyWpfApp, the SourceGenerator stops working. -->
+    <Page Include="..\src\MyWindow.xaml" Link="src\MyWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+
+    <Compile Include="..\src\MyWindow.xaml.cs" Link="src\MyWindow.xaml.cs">
+      <DependentUpon>MyWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+
+  </ItemGroup>
+
+</Project>
