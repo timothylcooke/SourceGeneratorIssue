@@ -38,6 +38,7 @@
   <ItemGroup>
     <!-- This ItemGroup is identical between the two projects. -->
 
+    <PackageReference Include="PolySharp" Version="1.15.0" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers" />
     <PackageReference Include="ReactiveUI" Version="20.1.63" />
     <PackageReference Include="ReactiveUI.SourceGenerators" Version="2.0.17" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" PrivateAssets="all" />
 
@@ -51,7 +52,6 @@
       <SubType>Code</SubType>
     </Compile>
 
-    <Compile Include="..\src\Compatibility.cs" Link="src\Compatibility.cs" />
     <Compile Include="..\src\ExampleViewModel.cs" Link="src\ExampleViewModel.cs" />
 
     <!-- By nature of having any WPF "Page" (XAML) resource (e.g. Window) in LegacyWpfApp, the SourceGenerator stops working. -->
